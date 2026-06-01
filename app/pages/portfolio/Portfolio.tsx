@@ -8,6 +8,8 @@ interface Tech {
   color: "react" | "next" | "ts" | "tailwind" | "api";
 }
 
+type ProjectType = "individual" | "collaborative";
+
 interface App {
   name: string;
   icon: string;
@@ -16,14 +18,27 @@ interface App {
   techs: Tech[];
   link?: string;
   linkLabel?: string;
+
+  // 🆕 nuevos campos
+  projectType: ProjectType;
+  teamMembers?: string[];
+  contributions?: string[];
 }
 
 const APPS: App[] = [
   {
     name: "WhyNot?!",
     icon: "/icons/WNOTICON.png",
-    description: "App for iPhone/iPad that helps people to connect more with the present through small challenges that can help them to find new hobbies, to grow as a person, etc...",
+    description:
+      "App for iPhone/iPad that helps people to connect more with the present through small challenges that can help them to find new hobbies, to grow as a person, etc...",
     status: "live",
+    projectType: "individual",
+    teamMembers: [],
+    contributions: [
+      "Full design and development of the app",
+      "Implemented core challenge system",
+      "Full ideation, and full development and design of the app",
+    ],
     techs: [
       { label: "Swift", color: "react" },
       { label: "SwiftUI", color: "next" },
@@ -32,11 +47,21 @@ const APPS: App[] = [
     link: "https://apps.apple.com/mx/app/whynot/id6759918158?l=en-GBWhyNot?!",
     linkLabel: "Go to App",
   },
+
   {
     name: "WarriorMind",
     icon: "/icons/AppIconWM.png",
-    description: "WarriorMind is a self-improvement app designed to turn intention into action. It helps you build discipline through personalized challenges called “Battles,” track your goals, and grow through an identity-based system that adapts to your mindset. With features like motivational content and a customizable AI-generated warrior avatar, WarriorMind transforms personal growth into an engaging, game-like experience.",
+    description:
+      "WarriorMind is a self-improvement app designed to turn intention into action. It helps you build discipline through personalized challenges called “Battles,” track your goals, and grow through an identity-based system that adapts to your mindset. With features like motivational content and a customizable AI-generated warrior avatar, WarriorMind transforms personal growth into an engaging, game-like experience.",
     status: "live",
+    projectType: "individual",
+    teamMembers: [],
+    contributions: [
+      "Full ideation, and full development and design of the app",
+      "Core architecture in SwiftUI",
+      "AI avatar integration",
+      "Gamification system design",
+    ],
     techs: [
       { label: "Swift", color: "react" },
       { label: "SwiftUI", color: "next" },
@@ -45,11 +70,21 @@ const APPS: App[] = [
     link: "https://apps.apple.com/mx/app/warriormind/id6759920278?l=en-GBWarriorMind",
     linkLabel: "Go to App",
   },
+
   {
     name: "Sugar-Lens",
     icon: "/icons/AppIconSL.png",
-    description: "This is an app to help people with diabetes to manage better their blood glucose levels depending on the food they consume, through scanning the food, logging the sugar, predictions of sugar glucose levels and companion with the Apple Watch through suggestions in order to control your daily amount of sugar.",
+    description:
+      "This is an app to help people with diabetes to manage better their blood glucose levels depending on the food they consume, through scanning the food, logging the sugar, predictions of sugar glucose levels and companion with the Apple Watch through suggestions in order to control your daily amount of sugar.",
     status: "live",
+    projectType: "collaborative",
+    teamMembers: ["Fatemeh Abolhasani", "Haniyeh Azimzadeh", "Michela D'Auria", "Mobina Haghighat", "Chaima Chafaai", "José Miguel Guerrero Jiménez"],
+    contributions: [
+      "Food scanning system",
+      "ML integration for glucose prediction",
+      "Apple Watch companion features",
+      "Development of the app's core architecture",
+    ],
     techs: [
       { label: "Swift", color: "next" },
       { label: "SwiftUI", color: "ts" },
@@ -59,11 +94,19 @@ const APPS: App[] = [
     link: "https://apps.apple.com/mx/app/sugar-lens/id6758524494?l=en-GBSugar-Lens",
     linkLabel: "Go to App",
   },
+
   {
     name: "Remo-Tennis",
     icon: "/icons/RemoTennisIcon.png",
-    description: "Tennis app to play with the remote control as the racket, 3d unity game for the Apple TV",
+    description:
+      "Tennis app to play with the remote control as the racket, 3d unity game for the Apple TV",
     status: "test-flight",
+    projectType: "collaborative",
+    teamMembers: ["Harith Angelo Perera", "Brunella Roy Chowdhury", "Jonathan Tellez Perez", "José Miguel Guerrero Jiménez", "Sahil Chouhan", "Şule Nur Çelik", "Sagar Ramakrishna Shetty"],
+    contributions: [
+      "Unity gameplay integration",
+      "Remote control input system",
+    ],
     techs: [
       { label: "Swift", color: "react" },
       { label: "SwiftUI", color: "ts" },
@@ -72,11 +115,19 @@ const APPS: App[] = [
     link: "https://testflight.apple.com/join/sRXaffXe",
     linkLabel: "Go to App",
   },
+
   {
     name: "CultrAxy",
     icon: "/icons/AppIconCA.png",
-    description: "This is an app to help people who wants or are moving to another countries, to help them to adapt easier to the new culture, by reading fun facts, asking specific questions from that culture to an ai, looking by their own some important things of some cultures and also with a gamified notification system, in which users are going to receive notifications at a random hour at the day in which they will open a mystery flashcard containing a challenge, fun fact or suggestion.",
+    description:
+      "This is an app to help people who wants or are moving to another countries, to help them to adapt easier to the new culture, by reading fun facts, asking specific questions from that culture to an ai, looking by their own some important things of some cultures and also with a gamified notification system.",
     status: "test-flight",
+    projectType: "collaborative",
+    teamMembers: ["Sara", "Estrella", "José Miguel Guerrero Jiménez", "A P", "Asad"],
+    contributions: [
+      "AI integration for cultural Q&A",
+      "Gamified notification system",
+    ],
     techs: [
       { label: "Swift", color: "next" },
       { label: "SwiftUI", color: "ts" },
@@ -85,11 +136,20 @@ const APPS: App[] = [
     link: "https://testflight.apple.com/join/RSKEA1r9",
     linkLabel: "Go to App",
   },
+
   {
     name: "MuseNema",
     icon: "/icons/MNAppIcon.png",
-    description: "An app to find the soundtrack of movies, series and video games, in which you can play song´s demos thanks to music kit",
+    description:
+      "An app to find the soundtrack of movies, series and video games, in which you can play song´s demos thanks to music kit",
     status: "test-flight",
+    projectType: "individual",
+    teamMembers: [],
+    contributions: [
+      "Full development of the app",
+      "MusicKit integration",
+      "Spotify API integration",
+    ],
     techs: [
       { label: "Swift", color: "next" },
       { label: "SwiftUI", color: "ts" },
@@ -152,14 +212,45 @@ function AppModal({ app, index, onClose }: { app: App; index: number; onClose: (
 
           <p className="modal-desc">{app.description}</p>
 
-          <div className="modal-section-label">Stack</div>
+          
+          <div className="modal-section-label">Project</div>
+
+            <p className="modal-desc">
+              Type: {app.projectType === "collaborative" ? "Collaborative" : "Individual"}
+            </p>
+
+            {app.projectType === "collaborative" && app.teamMembers?.length && (
+              <>
+                <div className="modal-section-label">Team Members</div>
+                <ul className="modal-list">
+                  {app.teamMembers.map((m) => (
+                    <li key={m}>{m}</li>
+                  ))}
+                </ul>
+              </>
+            )}
+
+            {app.contributions?.length && (
+              <>
+                <div className="modal-section-label">My Contributions</div>
+                <ul className="modal-list">
+                  {app.contributions.map((c) => (
+                    <li key={c}>{c}</li>
+                  ))}
+                </ul>
+              </>
+            )}
+            <div className="modal-section-label">Stack</div>
           <div className="tech-chips" style={{ gap: 8 }}>
             {app.techs.map((t) => (
               <TechChip key={t.label} tech={t} />
             ))}
           </div>
+
         </div>
+        
       </div>
+      
     </div>
   );
 }

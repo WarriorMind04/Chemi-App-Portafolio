@@ -24,3 +24,27 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+.modal-list {
+  font-size: 13px;
+  color: #6b6b6b;
+  line-height: 1.6;
+  padding-left: 18px;
+  margin-bottom: 18px;
+}
+
+.modal-list li {
+  margin-bottom: 6px;
+}
+
+.modal-list-contributions {
+  color: #7a7a7a;
+  background: #fafafa;
+  border: 1px solid #f0f0f0;
+  padding: 12px 14px;
+  border-radius: 12px;
+}
+
+.modal-section-label {
+  margin-top: 18px;
+}
