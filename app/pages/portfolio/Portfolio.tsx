@@ -610,6 +610,43 @@ export default function Portfolio() {
             />
           ))}
         </div>
+        <div className="advice-section">
+        <p className="section-label">Advice for Future Academy Students</p>
+
+        <div className="advice-card">
+          <h3>Things I Wish I Knew Before Starting</h3>
+
+          <ul>
+            <li>
+              Focus on learning rather than trying to build the perfect app.
+              The Academy is one of the best places to experiment and fail fast.
+            </li>
+
+            <li>
+              Collaborate with as many people as possible. Some of the most
+              valuable lessons come from working with people from different
+              backgrounds and cultures.
+            </li>
+
+            <li>
+              Be proactive and take initiative. Opportunities often come to
+              those who volunteer, lead discussions, and step outside their
+              comfort zone.
+            </li>
+
+            <li>
+              Build relationships and network. The people you meet during the
+              Academy can become future teammates, friends, mentors, or
+              collaborators.
+            </li>
+
+            <li>
+              Enjoy the journey. The projects are important, but the personal
+              growth and experiences are what stay with you the longest.
+            </li>
+          </ul>
+        </div>
+      </div>
       </div>
 
       {selected && (
